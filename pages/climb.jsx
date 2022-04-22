@@ -1,11 +1,52 @@
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Climb() {
+    const [tabIndex, setTabIndex] = useState(0);
+
+    const tabDatas = [
+        {
+            title: "Mountain 1",
+            image: "/images/tab-img-1.png",
+            table: [
+                "Schedule",
+                ["25 Nov 2022", "Vestibulum viverra"],
+                ["28 Nov 2022", "Vestibulum viverra"],
+                ["", ""],
+                ["18 Dec 2022", "Vestibulum viverra"],
+                ["", ""],
+                ["7 Jan 2023", "Vestibulum viverra"],
+            ],
+        },
+        {
+            title: "Mountain 2",
+            image: "/images/tab-img-2.png",
+            table: [
+                "schedule",
+                ["17 Nov 2022", "Vestibulum viverra"],
+                ["", ""],
+                ["13 Dec 2022", "Vestibulum viverra"],
+                ["28 Dec 2022", "Vestibulum viverra"],
+                ["", ""],
+                ["9 Feb 2023", "Vestibulum viverra"],
+            ],
+        },
+    ];
+
     return (
         <section className="climb" id="team">
             <div className="climb__header-bg">
                 <div className="climb__header container-lg">
-                    <Image src="/images/climb-header.png" alt="02. Climb" width={232} height={127}/>
+                    <div>
+                        <Image
+                            src="/images/climb-header.png"
+                            alt="02. Climb"
+                            width={232}
+                            height={127}
+                            layout="fixed"
+                            className="climb__header-image"
+                        />
+                    </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Omnis rem unde numquam, quam voluptatibus quis
@@ -13,105 +54,73 @@ export default function Climb() {
                     </p>
                 </div>
             </div>
+            {/* map over buttons, onClick, setTabIndex(index of button)  */}
 
             <div className="climb__tab-bg">
                 <div className="climb__tab-container container-lg">
-                    <button className="climb__tab-button climb__tab-mountain-1 header-font is-active">
-                        Mountain 1
-                    </button>
-
-                    <button className="climb__tab-button climb__tab-mountain-2 header-font">
-                        Mountain 2
-                    </button>
+                    {tabDatas.map((tab, i) => {
+                        return (
+                            <button
+                                className={`climb__tab-button climb__tab-mountain-${
+                                    i + 1
+                                } header-font ${tabIndex === i && "is-active"}`}
+                                onClick={() => setTabIndex(i)}
+                                key={tab.title}
+                            >
+                                {tab.title}
+                            </button>
+                        );
+                    })}
                 </div>
-
-                <div className="tab-1 climb__tab-content is-active">
-                    <div className="climb__table container-lg">
-                        <table>
-                            <thead>
-                                <tr className="td-right">
-                                    <th colSpan="2" className="header-font td-left">
-                                        Schedule
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td className="td-left">25 Nov 2022</td>
-                                    <td className="td-right">Vestibulum viverra</td>
-                                </tr>
-                                <tr>
-                                    <td className="td-left">28 Nov 2022</td>
-                                    <td className="td-right">Vestibulum viverra</td>
-                                </tr>
-                                <tr>
-                                    <td className="td-left">&nbsp;</td>
-                                    <td className="td-right">&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td className="td-left">18 Dec 2022</td>
-                                    <td className="td-right">Vestibulum viverra</td>
-                                </tr>
-                                <tr>
-                                    <td className="td-left">&nbsp;</td>
-                                    <td className="td-right">&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td className="td-left td-bottom">
-                                        7 Jan 2023
-                                    </td>
-                                    <td className="td-right td-bottom">
-                                        Vestibulum viverra
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div className="tab-2 climb__tab-content">
-                    <div className="climb__table container-lg">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th colSpan="2" className="header-font">
-                                        Schedule
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td className="td-left">17 Nov 2022</td>
-                                    <td className="td-right">Vestibulum viverra</td>
-                                </tr>
-                                <tr>
-                                    <td className="td-left">&nbsp;</td>
-                                    <td className="td-right">&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td className="td-left">13 Dec 2022</td>
-                                    <td className="td-right">Vestibulum viverra</td>
-                                </tr>
-                                <tr>
-                                    <td className="td-left">28 Dec 2022</td>
-                                    <td className="td-right">Vestibulum viverra</td>
-                                </tr>
-                                <tr>
-                                    <td className="td-left">&nbsp;</td>
-                                    <td className="td-right">&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td className="td-left td-bottom">
-                                        9 Feb 2023
-                                    </td>
-                                    <td className="td-right td-bottom">
-                                        Vestibulum viverra
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                {tabDatas.map((tab, i) => {
+                    if (tabIndex === i) {
+                        return (
+                            <div
+                                className={`tab-${i + 1} climb__tab-content ${
+                                    tabIndex === i && "is-active"
+                                }`}
+                                key={tab.title}
+                            >
+                                <div className="climb__table container-lg">
+                                    <table>
+                                        <thead>
+                                            <tr className="td-right">
+                                                <th
+                                                    colSpan="2"
+                                                    className="header-font td-left"
+                                                >
+                                                    {tab.table[0]}
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {tab.table.map((row, i) => {
+                                                if (i !== 0) {
+                                                    return (
+                                                        <tr key={i}>
+                                                            {/* Add blank rows if row is empty in list */}
+                                                            <td className="td-left">
+                                                                {row[0] !==
+                                                                "" ? (
+                                                                    row[0]
+                                                                ) : (
+                                                                    <>&nbsp;</>
+                                                                )}
+                                                            </td>
+                                                            <td className="td-right">
+                                                                {row[1]}
+                                                            </td>
+                                                        </tr>
+                                                    );
+                                                }
+                                            })}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        );
+                    }
+                })}
             </div>
         </section>
     );
