@@ -78,13 +78,6 @@ p {
   z-index: 10;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  /* change navbar background on scroll */
-}
-
-.nav__container.scrolling-active {
-  background-color: #61759e;
-  -webkit-box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
-          box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
 }
 
 .nav__logo {
@@ -92,18 +85,28 @@ p {
   display: -ms-flexbox;
   display: flex;
   gap: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.nav__container.scrolling-active .nav {
+.nav__image-text {
+  display: none;
+}
+
+.nav__container.scrolling-active {
+  /* change navbar background on scroll */
+  background-color: #61759e;
+  -webkit-box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
   /* display nav logo with text on scroll */
-  /* change navbar text color on scroll */
 }
 
-.nav__container.scrolling-active .nav .nav__logo .nav__image-text {
+.nav__container.scrolling-active .nav__image-text {
   display: block;
 }
 
-.nav__container.scrolling-active .nav .nav__list-link {
+.nav__container.scrolling-active .nav__list-link {
   color: #404f6c;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -410,7 +413,7 @@ p {
 }
 
 @media (max-width: 30em) {
-  .nav__container.scrolling-active .nav .nav__logo .nav__image-text {
+  .nav__container.scrolling-active .nav__image-text {
     display: none;
   }
   .history__text {

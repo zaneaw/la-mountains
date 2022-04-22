@@ -1,11 +1,26 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
-import Header from "./navbar";
+import Navbar from "./navbar";
 import Hero from "./hero";
 import History from "./history";
 import Climb from "./climb";
 import Footer from "./footer";
 
 export default function Home() {
+    const [scrollActive, setScrollActive] = useState(false);
+
+    const navbarDisplay = () => {
+        if (window.scrollY > 10) {
+            setScrollActive(true);
+        } else {
+            setScrollActive(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", navbarDisplay);
+    }, []);
+
     return (
         <div>
             <Head>
@@ -32,7 +47,7 @@ export default function Home() {
                 />
                 <title>LA Mountains</title>
             </Head>
-            <Header />
+            <Navbar scrollActive={scrollActive} />
             <Hero />
             <History />
             <Climb />
