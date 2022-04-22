@@ -75,11 +75,6 @@ p {
     left: 0;
     z-index: 10;
     transition: all 0.5s;
-    /* change navbar background on scroll */
-    &.scrolling-active {
-        background-color: #61759e;
-        box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
-    }
 }
 
 .nav__logo {
@@ -92,8 +87,12 @@ p {
     display: none;
 }
 
-/* display nav logo with text on scroll */
 .nav__container.scrolling-active {
+    /* change navbar background on scroll */
+    background-color: #61759e;
+    box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+
+    /* display nav logo with text on scroll */
     & .nav__image-text {
         display: block;
     }
@@ -103,8 +102,7 @@ p {
     }
 }
 
-/* change navbar text color on scroll */
-.nav__container.scrolling-active .nav {
+.nav {
     display: flex;
     align-items: center;
     &__image-text {

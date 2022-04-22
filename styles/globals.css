@@ -78,13 +78,6 @@ p {
   z-index: 10;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  /* change navbar background on scroll */
-}
-
-.nav__container.scrolling-active {
-  background-color: #61759e;
-  -webkit-box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
-          box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
 }
 
 .nav__logo {
@@ -101,7 +94,14 @@ p {
   display: none;
 }
 
-/* display nav logo with text on scroll */
+.nav__container.scrolling-active {
+  /* change navbar background on scroll */
+  background-color: #61759e;
+  -webkit-box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+  /* display nav logo with text on scroll */
+}
+
 .nav__container.scrolling-active .nav__image-text {
   display: block;
 }
@@ -112,8 +112,7 @@ p {
   transition: all 0.5s;
 }
 
-/* change navbar text color on scroll */
-.nav__container.scrolling-active .nav {
+.nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,11 +121,11 @@ p {
           align-items: center;
 }
 
-.nav__container.scrolling-active .nav__image-text {
+.nav__image-text {
   display: none;
 }
 
-.nav__container.scrolling-active .nav__list {
+.nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,7 +139,7 @@ p {
   margin-bottom: 0;
 }
 
-.nav__container.scrolling-active .nav__list-item {
+.nav__list-item {
   list-style-type: none;
   font-size: 0.9rem;
   padding-inline: 5px;
@@ -153,16 +152,16 @@ p {
   transition: all 0.2s;
 }
 
-.nav__container.scrolling-active .nav__list-item:hover {
+.nav__list-item:hover {
   text-decoration: none;
 }
 
-.nav__container.scrolling-active .nav__list-link {
+.nav__list-link {
   color: #fff;
   text-decoration: none;
 }
 
-.nav__container.scrolling-active .nav__list-link:hover {
+.nav__list-link:hover {
   color: #fff;
 }
 
