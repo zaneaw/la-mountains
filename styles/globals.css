@@ -87,16 +87,16 @@ p {
           box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
 }
 
-.nav__container.scrolling-active .nav {
-  /* display nav logo with text on scroll */
-  /* change navbar text color on scroll */
-}
-
-.nav__container.scrolling-active .nav .nav__logo {
+.nav__logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 5px;
+}
+
+.nav__container.scrolling-active .nav {
+  /* display nav logo with text on scroll */
+  /* change navbar text color on scroll */
 }
 
 .nav__container.scrolling-active .nav .nav__logo .nav__image-text {
@@ -390,6 +390,13 @@ p {
   text-transform: uppercase;
 }
 
+.footer .footer__div a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+
 .footer .footer__div span {
   font-weight: 700;
   font-size: 0.85rem;
@@ -415,11 +422,10 @@ p {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 5px;
+    padding-inline: 24px;
   }
   .climb__tab-button {
     bottom: 9px;
-  }
-  .climb__tab-button {
     font-size: 0.9rem;
   }
   .climb__table th,

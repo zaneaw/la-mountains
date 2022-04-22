@@ -82,12 +82,12 @@ p {
     }
 }
 
-.nav__container.scrolling-active .nav {
-    .nav__logo {
-        display: flex;
-        gap: 5px;
-    }
+.nav__logo {
+    display: flex;
+    gap: 5px;
+}
 
+.nav__container.scrolling-active .nav {
     /* display nav logo with text on scroll */
     .nav__logo .nav__image-text {
         display: block;
@@ -321,6 +321,10 @@ p {
         color: #253662;
         font-style: oblique;
         text-transform: uppercase;
+        & a {
+            display: flex;
+            gap: 5px;
+        }
         & span {
             font-weight: 700;
             font-size: 0.85rem;
@@ -349,12 +353,11 @@ p {
         &__header {
             flex-direction: column;
             gap: 5px;
+            padding-inline: 24px;
         }
         &__tab {
             &-button {
                 bottom: 9px;
-            }
-            &-button {
                 font-size: 0.9rem;
             }
         }

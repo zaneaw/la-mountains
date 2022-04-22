@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Header from "./header";
+import Header from "./navbar";
 import Hero from "./hero";
 import History from "./history";
 import Climb from "./climb";
