@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Header() {
     return (
         <header className="header">
-            <div className="nav__container">
+            <div className="nav__container scrolling-active">
                 <nav className="nav container-lg">
                     <Link href="#">
                         <a className="nav__logo hover-prop">
@@ -15,7 +15,9 @@ export default function Header() {
                                 width={50}
                                 height={50}
                             />
-                            <Image
+                            {/* Have to disable because of default styling added */}
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
                                 className="nav__image-text"
                                 src="/images/logo-text-transparent.png"
                                 alt="logo text, Los Angeles Mountains"

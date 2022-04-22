@@ -92,27 +92,6 @@ p {
   display: -ms-flexbox;
   display: flex;
   gap: 5px;
-}
-
-.nav__container.scrolling-active .nav {
-  /* display nav logo with text on scroll */
-  /* change navbar text color on scroll */
-}
-
-.nav__container.scrolling-active .nav .nav__logo .nav__image-text {
-  display: block;
-}
-
-.nav__container.scrolling-active .nav .nav__list-link {
-  color: #404f6c;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -122,7 +101,32 @@ p {
   display: none;
 }
 
-.nav__list {
+/* display nav logo with text on scroll */
+.nav__container.scrolling-active .nav__image-text {
+  display: block;
+}
+
+.nav__container.scrolling-active .nav__list-link {
+  color: #404f6c;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/* change navbar text color on scroll */
+.nav__container.scrolling-active .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__container.scrolling-active .nav__image-text {
+  display: none;
+}
+
+.nav__container.scrolling-active .nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,7 +140,7 @@ p {
   margin-bottom: 0;
 }
 
-.nav__list-item {
+.nav__container.scrolling-active .nav__list-item {
   list-style-type: none;
   font-size: 0.9rem;
   padding-inline: 5px;
@@ -149,16 +153,16 @@ p {
   transition: all 0.2s;
 }
 
-.nav__list-item:hover {
+.nav__container.scrolling-active .nav__list-item:hover {
   text-decoration: none;
 }
 
-.nav__list-link {
+.nav__container.scrolling-active .nav__list-link {
   color: #fff;
   text-decoration: none;
 }
 
-.nav__list-link:hover {
+.nav__container.scrolling-active .nav__list-link:hover {
   color: #fff;
 }
 
@@ -410,7 +414,7 @@ p {
 }
 
 @media (max-width: 30em) {
-  .nav__container.scrolling-active .nav .nav__logo .nav__image-text {
+  .nav__container.scrolling-active .nav__image-text {
     display: none;
   }
   .history__text {

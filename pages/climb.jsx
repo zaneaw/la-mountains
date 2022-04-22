@@ -95,11 +95,26 @@ export default function Climb() {
                                         </thead>
                                         <tbody>
                                             {tab.table.map((row, i) => {
+                                                const listLen =
+                                                    tab.table.length;
+                                                const testing = () => {
+                                                    if (listLen === i)
+                                                        console.log("True");
+                                                };
+                                                testing();
                                                 if (i !== 0) {
                                                     return (
                                                         <tr key={i}>
-                                                            {/* Add blank rows if row is empty in list */}
-                                                            <td className="td-left">
+                                                            {/* Add blank row if row is empty in list */}
+                                                            {/* Add padding to last elements */}
+                                                            <td
+                                                                className={`td-left ${
+                                                                    listLen -
+                                                                        1 ===
+                                                                        i &&
+                                                                    "td-bottom"
+                                                                }`}
+                                                            >
                                                                 {row[0] !==
                                                                 "" ? (
                                                                     row[0]
@@ -107,7 +122,14 @@ export default function Climb() {
                                                                     <>&nbsp;</>
                                                                 )}
                                                             </td>
-                                                            <td className="td-right">
+                                                            <td
+                                                                className={`td-right ${
+                                                                    listLen -
+                                                                        1 ===
+                                                                        i &&
+                                                                    "td-bottom"
+                                                                }`}
+                                                            >
                                                                 {row[1]}
                                                             </td>
                                                         </tr>
