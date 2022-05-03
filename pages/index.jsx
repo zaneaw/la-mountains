@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
-import Navbar from "./navbar";
-import Hero from "./hero";
-import History from "./history";
-import Climb from "./climb";
-import Footer from "./footer";
+import Navbar from "../comps/navbar";
+import Hero from "../comps/hero";
+import History from "../comps/history";
+import Climb from "../comps/climb";
+import Footer from "../comps/footer";
 
 export default function Home() {
     const [scrollActive, setScrollActive] = useState(false);

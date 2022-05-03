@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Header({ scrollActive }) {
-    console.log(scrollActive);
     return (
         <header className="header">
             <div
